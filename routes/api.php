@@ -27,6 +27,7 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::controller(UserController::class)->group(function () {
     Route::get('users/me', 'me');
+    Route::get('users/myAdvertisements', 'myAdvertisements');
 });
 
 Route::post('advertisements/filter', [AdvertisementController::class, 'filter']);

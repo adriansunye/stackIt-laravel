@@ -21,6 +21,7 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email_verified_at' => now(),
             'email' => fake()->email(),
+            'phone' => '1984832149',
             'password' => bcrypt('factoria'), // password
             'remember_token' => Str::random(10),
         ];
