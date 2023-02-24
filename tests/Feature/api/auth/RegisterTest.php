@@ -23,6 +23,8 @@ class RegisterTest extends TestCase
         $response = $this->postJson('/api/register', [
             "name" => "newUser",
             "email" => "newUser@example.com",
+            "title" => 'FrontEnd',
+            "phone" => "8888745",
             'password' => 'factoria',
         ]);
         

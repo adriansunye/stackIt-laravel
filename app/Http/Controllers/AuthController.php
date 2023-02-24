@@ -49,14 +49,16 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
+            'title' => []
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
-        $role = Role::where('name', $request->role)->first();
+        $role = Role::where('name', 'user')->first();
         $user->assignRole($role);
 
         return response()->json([
