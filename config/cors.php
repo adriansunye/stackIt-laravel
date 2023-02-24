@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:5173', 'http://localhost:5173/profile'],
+    'allowed_origins' => ['http://localhost:5173', 'http://localhost:5173/profile', 'https://stackithack.netlify.app'],
 
     'allowed_origins_patterns' => ['*'],
 
