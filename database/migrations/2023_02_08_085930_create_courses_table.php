@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('category');
             $table->text('image')->nullable();
             $table->text('description');
-            $table->integer('price');
+            $table->integer('price')->nullable();
             $table->unsignedBiginteger('user_id')->nullable();
             $table->timestamps();
 

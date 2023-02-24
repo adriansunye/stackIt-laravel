@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAdvertisementRequest;
 use App\Models\Advertisement;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdvertisementController extends Controller
 {
@@ -54,6 +56,10 @@ class AdvertisementController extends Controller
     public function store(StoreAdvertisementRequest $request)
     {
         $advertisement = Advertisement::create($request->all());
+
+        $user_id = Auth::user()->id;
+        $user = User::where('id', $user_id)->first();
+        $user->advertisements()->save($advertisement);
 
         return response()->json([
             'status' => true,
